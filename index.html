@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daniel Antunes · Data & Analytics Portfolio</title>
+  <meta name="color-scheme" content="light dark">
+  <style>
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0b0d0f;color:#e8eef6}
+    a{color:inherit;text-decoration:none}
+    header{padding:20px;background:#0f141a;display:flex;justify-content:space-between;align-items:center}
+    header h1{margin:0;font-size:22px}
+    nav a{margin-left:12px;padding:8px 14px;background:#1a212b;border-radius:8px}
+    .hero{padding:40px;text-align:center}
+    .hero h2{font-size:32px;margin:0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;padding:20px}
+    .card{background:#0f141a;border:1px solid #1e2530;border-radius:12px;padding:18px}
+    .card h3{margin-top:0;font-size:18px}
+    .card p{font-size:14px;color:#a3b1c2}
+    footer{padding:20px;text-align:center;color:#a3b1c2;font-size:13px}
+    @media (prefers-color-scheme: light){
+      body{background:#f7fbff;color:#0f1720}
+      header{background:#fff}
+      .card{background:#fff;border:1px solid #e6eef8}
+      nav a{background:#eef5ff}
+      .card p{color:#52606d}
+      footer{color:#52606d}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Daniel Antunes</h1>
+    <nav>
+      <a href="https://github.com/danmca19" target="_blank">GitHub</a>
+      <a href="https://br.linkedin.com/in/danielmcantunes" target="_blank">LinkedIn</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <h2>Turning complex data into actionable insights</h2>
+    <p>Analytics Engineer · DataOps · Data Engineering</p>
+  </section>
+  <section class="grid">
+    <a class="card" href="https://github.com/danmca19/telecom-churn-prediction" target="_blank">
+      <h3>Customer Churn Prediction – Telecom</h3>
+      <p>End-to-end ML pipeline to predict and reduce churn.</p>
+    </a>
+    <a class="card" href="https://github.com/danmca19/hotel-cancellation-analysis" target="_blank">
+      <h3>Hotel Booking Cancellation Analysis</h3>
+      <p>Classification project to predict and reduce cancellations.</p>
+    </a>
+    <a class="card" href="https://github.com/danmca19/databricks-medallion-architecture" target="_blank">
+      <h3>Medallion Data Architecture – Databricks</h3>
+      <p>Bronze → Silver → Gold layers with Delta Lake.</p>
+    </a>
+    <a class="card" href="https://github.com/danmca19/sales-forecasting-timeseries" target="_blank">
+      <h3>Sales Forecasting with Time Series</h3>
+      <p>Prophet/ARIMA/Transformers for retail demand planning.</p>
+    </a>
+    <a class="card" href="https://github.com/danmca19/real-time-pipeline-kafka-databricks" target="_blank">
+      <h3>Real-Time Data Pipeline (Kafka + Databricks)</h3>
+      <p>Fraud detection with streaming architecture.</p>
+    </a>
+    <a class="card" href="https://github.com/danmca19/dwh-modernization-dbt-snowflake" target="_blank">
+      <h3>Data Warehouse Modernization</h3>
+      <p>Modern data stack migration using dbt + Snowflake.</p>
+    </a>
+    <a class="card" href="https://github.com/danmca19/sentiment-analysis-dashboard" target="_blank">
+      <h3>Sentiment Analysis Dashboard</h3>
+      <p>NLP project with Hugging Face + Looker Studio dashboard.</p>
+    </a>
+  </section>
+  <footer>
+    © <script>document.write(new Date().getFullYear())</script> Daniel Antunes · Built for GitHub Pages
+  </footer>
+</body>
+</html>
