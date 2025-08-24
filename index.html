@@ -4,63 +4,129 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Daniel Antunes · Data & Analytics Portfolio</title>
-  <meta name="color-scheme" content="dark light">
   <style>
+    /* Base */
     body {
-      margin:0;
+      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background:#0d1117;
-      color:#c9d1d9;
-      line-height:1.6;
+      background: url('https://picsum.photos/1600/900?blur=3') no-repeat center center fixed;
+      background-size: cover;
+      color: #e5e7eb;
+      display: flex;
     }
-    a { color:#58a6ff; text-decoration:none; }
-    h1,h2,h3 { color:#f0f6fc; }
-    header {
-      background:#161b22;
-      padding:20px;
-      text-align:center;
-      border-bottom: 1px solid #30363d;
+    a { color: #58a6ff; text-decoration: none; }
+    h1,h2,h3 { color: #f0f6fc; }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      height: 100vh;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      position: fixed;
+      left: 0;
+      top: 0;
+      border-right: 1px solid rgba(255,255,255,0.1);
     }
-    header h1 { margin:0; font-size:28px; }
-    header p { margin:8px 0 0; font-size:15px; color:#8b949e; }
-    .container { max-width:900px; margin:0 auto; padding:20px; }
-    section { margin-bottom:40px; }
-    .badges img { margin:4px; }
+    .sidebar img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #58a6ff;
+      margin-bottom: 15px;
+    }
+    .sidebar h1 {
+      font-size: 20px;
+      margin: 10px 0 20px 0;
+      text-align: center;
+    }
+    .sidebar nav {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+      flex-grow: 1;
+    }
+    .sidebar nav a {
+      color: #e5e7eb;
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    .sidebar nav a:hover {
+      background: rgba(88,166,255,0.2);
+    }
+    .sidebar .social {
+      display: flex;
+      gap: 15px;
+      margin-top: auto;
+    }
+    .sidebar .social a {
+      color: #58a6ff;
+      font-weight: bold;
+    }
+
+    /* Content */
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 900px;
+    }
+    section {
+      margin-bottom: 60px;
+      background: rgba(15, 23, 42, 0.75);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .badges img { margin: 4px; }
     .project {
-      background:#161b22;
-      border-radius:8px;
-      padding:15px;
-      margin-bottom:20px;
-      border:1px solid #30363d;
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background: rgba(30,41,59,0.8);
     }
-    .project h3 { margin-top:0; }
     footer {
-      padding:20px;
-      text-align:center;
-      font-size:14px;
-      color:#8b949e;
-      border-top:1px solid #30363d;
+      text-align: center;
+      font-size: 14px;
+      color: #94a3b8;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>👋 Hi there, I'm Daniel Antunes</h1>
-    <p><strong>Data & Analytics Professional</strong> | <strong>Analytics Engineer</strong> | <strong>DataOps Specialist</strong></p>
-  </header>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <img src="https://avatars.githubusercontent.com/u/133653357?v=4" alt="Daniel Antunes">
+    <h1>Daniel Antunes</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#beliefs">Beliefs</a>
+    </nav>
+    <div class="social">
+      <a href="https://br.linkedin.com/in/danielmcantunes" target="_blank">LinkedIn</a>
+      <a href="https://github.com/danmca19" target="_blank">GitHub</a>
+    </div>
+  </div>
 
-  <div class="container">
-    <section>
-      <p>
-        I'm a Data & Analytics professional passionate about turning complex data into actionable insights to drive business growth and operational efficiency. 
-        I've led projects across <strong>Latin America, the U.S., Canada, the Philippines, and India</strong>, partnering with stakeholders to deliver scalable and intelligent solutions.
-      </p>
-      <p>
-        With a background in engineering and business analytics, I bring a strategic view to technical solutions—connecting data, processes, and impact.
-      </p>
+  <!-- Main Content -->
+  <div class="content">
+    <section id="about">
+      <h2>👋 Hi there, I'm Daniel Antunes</h2>
+      <p><strong>Data & Analytics Professional</strong> | <strong>Analytics Engineer</strong> | <strong>DataOps Specialist</strong></p>
+      <p>I'm a Data & Analytics professional passionate about turning complex data into actionable insights to drive business growth and operational efficiency. 
+      I've led projects across <strong>Latin America, the U.S., Canada, the Philippines, and India</strong>, partnering with stakeholders to deliver scalable and intelligent solutions.</p>
+      <p>With a background in engineering and business analytics, I bring a strategic view to technical solutions—connecting data, processes, and impact.</p>
     </section>
 
-    <section>
+    <section id="skills">
       <h2>💻 Skills & Technologies</h2>
       <div class="badges">
         <p><strong>Languages & Data Tools:</strong><br>
@@ -68,53 +134,38 @@
         <img src="https://img.shields.io/badge/-R-276DC3?logo=r&logoColor=white">
         <img src="https://img.shields.io/badge/-SQL-336791?logo=postgresql&logoColor=white">
         <img src="https://img.shields.io/badge/-DAX-F2C811?logo=powerbi&logoColor=black"></p>
-
         <p><strong>Data Engineering & Orchestration:</strong><br>
         <img src="https://img.shields.io/badge/-Databricks-EF4B2C?logo=databricks&logoColor=white">
         <img src="https://img.shields.io/badge/-Snowflake-29B5E8?logo=snowflake&logoColor=white">
         <img src="https://img.shields.io/badge/-dbt-FF694B?logo=dbt&logoColor=white">
         <img src="https://img.shields.io/badge/-Airflow-017CEE?logo=apacheairflow&logoColor=white">
         <img src="https://img.shields.io/badge/-Terraform-623CE4?logo=terraform&logoColor=white"></p>
-
         <p><strong>Cloud Platforms:</strong><br>
         <img src="https://img.shields.io/badge/-Google_Cloud-4285F4?logo=googlecloud&logoColor=white">
         <img src="https://img.shields.io/badge/-AWS-232F3E?logo=amazonaws&logoColor=white"></p>
-
         <p><strong>Visualization:</strong><br>
         <img src="https://img.shields.io/badge/-PowerBI-F2C811?logo=powerbi&logoColor=black">
         <img src="https://img.shields.io/badge/-Looker%20Studio-4285F4?logo=googlestudio&logoColor=white"></p>
       </div>
     </section>
 
-    <section>
+    <section id="projects">
       <h2>💼 Key Projects</h2>
       <div class="project">
         <h3><a href="https://github.com/danmca19/Telecom_Churn">Customer Churn Prediction – Telecom</a></h3>
-        <p>A <strong>machine learning pipeline</strong> built with Python and scikit-learn to predict telecom churn, providing business-focused insights for customer retention strategies.</p>
-        <ul>
-          <li><strong>Objective:</strong> Predict customer churn for proactive retention efforts.</li>
-          <li><strong>Impact:</strong> Potential <strong>12% reduction</strong> in churn (~R$1.2M/year).</li>
-        </ul>
+        <p>Machine learning pipeline to predict telecom churn, with insights for retention strategies.</p>
       </div>
       <div class="project">
         <h3><a href="https://github.com/danmca19/HotelCancelations">Hotel Booking Cancellation Analysis</a></h3>
-        <p>A <strong>classification project</strong> using real hotel data to predict cancellations and identify cost-saving opportunities. Evaluates with accuracy, precision, recall, and F1-score.</p>
-        <ul>
-          <li><strong>Objective:</strong> Predict cancellations to optimize occupancy and revenue.</li>
-          <li><strong>Impact:</strong> Estimated <strong>15% reduction</strong> in cancellations (~R$500K/year).</li>
-        </ul>
+        <p>Classification project to predict hotel booking cancellations and optimize occupancy.</p>
       </div>
       <div class="project">
         <h3><a href="https://github.com/danmca19/Medallion_Data_Architecture">Medallion Data Architecture – Databricks</a></h3>
-        <p>Implementation of the <strong>Medallion architecture</strong> (Bronze → Silver → Gold) using Delta Lake and SQL transformations to create a modular and scalable data foundation.</p>
-        <ul>
-          <li><strong>Objective:</strong> Structure data in layers for reliable and fast analytics.</li>
-          <li><strong>Impact:</strong> <strong>40% reduction</strong> in query time.</li>
-        </ul>
+        <p>Implementation of Medallion architecture (Bronze → Silver → Gold) for scalable analytics.</p>
       </div>
     </section>
 
-    <section>
+    <section id="beliefs">
       <h2>🚀 Core Beliefs & Expertise</h2>
       <ul>
         <li><strong>Code with context:</strong> Tools are only as useful as the business questions they help answer.</li>
@@ -124,10 +175,10 @@
       </ul>
       <p><em>Always learning. Always building.</em> 🧠💡</p>
     </section>
-  </div>
 
-  <footer>
-    © <script>document.write(new Date().getFullYear())</script> Daniel Antunes · Built for GitHub Pages
-  </footer>
+    <footer>
+      © <script>document.write(new Date().getFullYear())</script> Daniel Antunes · Built for GitHub Pages
+    </footer>
+  </div>
 </body>
 </html>
