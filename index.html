@@ -4,72 +4,128 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Daniel Antunes · Data & Analytics Portfolio</title>
-  <meta name="color-scheme" content="light dark">
+  <meta name="color-scheme" content="dark light">
   <style>
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0b0d0f;color:#e8eef6}
-    a{color:inherit;text-decoration:none}
-    header{padding:20px;background:#0f141a;display:flex;justify-content:space-between;align-items:center}
-    header h1{margin:0;font-size:22px}
-    nav a{margin-left:12px;padding:8px 14px;background:#1a212b;border-radius:8px}
-    .hero{padding:40px;text-align:center}
-    .hero h2{font-size:32px;margin:0}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;padding:20px}
-    .card{background:#0f141a;border:1px solid #1e2530;border-radius:12px;padding:18px}
-    .card h3{margin-top:0;font-size:18px}
-    .card p{font-size:14px;color:#a3b1c2}
-    footer{padding:20px;text-align:center;color:#a3b1c2;font-size:13px}
-    @media (prefers-color-scheme: light){
-      body{background:#f7fbff;color:#0f1720}
-      header{background:#fff}
-      .card{background:#fff;border:1px solid #e6eef8}
-      nav a{background:#eef5ff}
-      .card p{color:#52606d}
-      footer{color:#52606d}
+    body {
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:#0d1117;
+      color:#c9d1d9;
+      line-height:1.6;
+    }
+    a { color:#58a6ff; text-decoration:none; }
+    h1,h2,h3 { color:#f0f6fc; }
+    header {
+      background:#161b22;
+      padding:20px;
+      text-align:center;
+      border-bottom: 1px solid #30363d;
+    }
+    header h1 { margin:0; font-size:28px; }
+    header p { margin:8px 0 0; font-size:15px; color:#8b949e; }
+    .container { max-width:900px; margin:0 auto; padding:20px; }
+    section { margin-bottom:40px; }
+    .badges img { margin:4px; }
+    .project {
+      background:#161b22;
+      border-radius:8px;
+      padding:15px;
+      margin-bottom:20px;
+      border:1px solid #30363d;
+    }
+    .project h3 { margin-top:0; }
+    footer {
+      padding:20px;
+      text-align:center;
+      font-size:14px;
+      color:#8b949e;
+      border-top:1px solid #30363d;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Daniel Antunes</h1>
-    <nav>
-      <a href="https://github.com/danmca19" target="_blank">GitHub</a>
-      <a href="https://br.linkedin.com/in/danielmcantunes" target="_blank">LinkedIn</a>
-    </nav>
+    <h1>👋 Hi there, I'm Daniel Antunes</h1>
+    <p><strong>Data & Analytics Professional</strong> | <strong>Analytics Engineer</strong> | <strong>DataOps Specialist</strong></p>
   </header>
-  <section class="hero">
-    <h2>Turning complex data into actionable insights</h2>
-    <p>Analytics Engineer · DataOps · Data Engineering</p>
-  </section>
-  <section class="grid">
-    <a class="card" href="https://github.com/danmca19/telecom-churn-prediction" target="_blank">
-      <h3>Customer Churn Prediction – Telecom</h3>
-      <p>End-to-end ML pipeline to predict and reduce churn.</p>
-    </a>
-    <a class="card" href="https://github.com/danmca19/hotel-cancellation-analysis" target="_blank">
-      <h3>Hotel Booking Cancellation Analysis</h3>
-      <p>Classification project to predict and reduce cancellations.</p>
-    </a>
-    <a class="card" href="https://github.com/danmca19/databricks-medallion-architecture" target="_blank">
-      <h3>Medallion Data Architecture – Databricks</h3>
-      <p>Bronze → Silver → Gold layers with Delta Lake.</p>
-    </a>
-    <a class="card" href="https://github.com/danmca19/sales-forecasting-timeseries" target="_blank">
-      <h3>Sales Forecasting with Time Series</h3>
-      <p>Prophet/ARIMA/Transformers for retail demand planning.</p>
-    </a>
-    <a class="card" href="https://github.com/danmca19/real-time-pipeline-kafka-databricks" target="_blank">
-      <h3>Real-Time Data Pipeline (Kafka + Databricks)</h3>
-      <p>Fraud detection with streaming architecture.</p>
-    </a>
-    <a class="card" href="https://github.com/danmca19/dwh-modernization-dbt-snowflake" target="_blank">
-      <h3>Data Warehouse Modernization</h3>
-      <p>Modern data stack migration using dbt + Snowflake.</p>
-    </a>
-    <a class="card" href="https://github.com/danmca19/sentiment-analysis-dashboard" target="_blank">
-      <h3>Sentiment Analysis Dashboard</h3>
-      <p>NLP project with Hugging Face + Looker Studio dashboard.</p>
-    </a>
-  </section>
+
+  <div class="container">
+    <section>
+      <p>
+        I'm a Data & Analytics professional passionate about turning complex data into actionable insights to drive business growth and operational efficiency. 
+        I've led projects across <strong>Latin America, the U.S., Canada, the Philippines, and India</strong>, partnering with stakeholders to deliver scalable and intelligent solutions.
+      </p>
+      <p>
+        With a background in engineering and business analytics, I bring a strategic view to technical solutions—connecting data, processes, and impact.
+      </p>
+    </section>
+
+    <section>
+      <h2>💻 Skills & Technologies</h2>
+      <div class="badges">
+        <p><strong>Languages & Data Tools:</strong><br>
+        <img src="https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white">
+        <img src="https://img.shields.io/badge/-R-276DC3?logo=r&logoColor=white">
+        <img src="https://img.shields.io/badge/-SQL-336791?logo=postgresql&logoColor=white">
+        <img src="https://img.shields.io/badge/-DAX-F2C811?logo=powerbi&logoColor=black"></p>
+
+        <p><strong>Data Engineering & Orchestration:</strong><br>
+        <img src="https://img.shields.io/badge/-Databricks-EF4B2C?logo=databricks&logoColor=white">
+        <img src="https://img.shields.io/badge/-Snowflake-29B5E8?logo=snowflake&logoColor=white">
+        <img src="https://img.shields.io/badge/-dbt-FF694B?logo=dbt&logoColor=white">
+        <img src="https://img.shields.io/badge/-Airflow-017CEE?logo=apacheairflow&logoColor=white">
+        <img src="https://img.shields.io/badge/-Terraform-623CE4?logo=terraform&logoColor=white"></p>
+
+        <p><strong>Cloud Platforms:</strong><br>
+        <img src="https://img.shields.io/badge/-Google_Cloud-4285F4?logo=googlecloud&logoColor=white">
+        <img src="https://img.shields.io/badge/-AWS-232F3E?logo=amazonaws&logoColor=white"></p>
+
+        <p><strong>Visualization:</strong><br>
+        <img src="https://img.shields.io/badge/-PowerBI-F2C811?logo=powerbi&logoColor=black">
+        <img src="https://img.shields.io/badge/-Looker%20Studio-4285F4?logo=googlestudio&logoColor=white"></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>💼 Key Projects</h2>
+      <div class="project">
+        <h3><a href="https://github.com/danmca19/Telecom_Churn">Customer Churn Prediction – Telecom</a></h3>
+        <p>A <strong>machine learning pipeline</strong> built with Python and scikit-learn to predict telecom churn, providing business-focused insights for customer retention strategies.</p>
+        <ul>
+          <li><strong>Objective:</strong> Predict customer churn for proactive retention efforts.</li>
+          <li><strong>Impact:</strong> Potential <strong>12% reduction</strong> in churn (~R$1.2M/year).</li>
+        </ul>
+      </div>
+      <div class="project">
+        <h3><a href="https://github.com/danmca19/HotelCancelations">Hotel Booking Cancellation Analysis</a></h3>
+        <p>A <strong>classification project</strong> using real hotel data to predict cancellations and identify cost-saving opportunities. Evaluates with accuracy, precision, recall, and F1-score.</p>
+        <ul>
+          <li><strong>Objective:</strong> Predict cancellations to optimize occupancy and revenue.</li>
+          <li><strong>Impact:</strong> Estimated <strong>15% reduction</strong> in cancellations (~R$500K/year).</li>
+        </ul>
+      </div>
+      <div class="project">
+        <h3><a href="https://github.com/danmca19/Medallion_Data_Architecture">Medallion Data Architecture – Databricks</a></h3>
+        <p>Implementation of the <strong>Medallion architecture</strong> (Bronze → Silver → Gold) using Delta Lake and SQL transformations to create a modular and scalable data foundation.</p>
+        <ul>
+          <li><strong>Objective:</strong> Structure data in layers for reliable and fast analytics.</li>
+          <li><strong>Impact:</strong> <strong>40% reduction</strong> in query time.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>🚀 Core Beliefs & Expertise</h2>
+      <ul>
+        <li><strong>Code with context:</strong> Tools are only as useful as the business questions they help answer.</li>
+        <li><strong>Documentation and reproducibility:</strong> Well-structured notebooks, READMEs and CI pipelines matter.</li>
+        <li><strong>Cross-functional thinking:</strong> The best analytics solutions start with understanding the problem from all sides.</li>
+        <li><strong>Applied AI:</strong> Leveraging skills in OCR, RPA, and predictive modeling to deliver business solutions.</li>
+      </ul>
+      <p><em>Always learning. Always building.</em> 🧠💡</p>
+    </section>
+  </div>
+
   <footer>
     © <script>document.write(new Date().getFullYear())</script> Daniel Antunes · Built for GitHub Pages
   </footer>
