@@ -1,348 +1,299 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mapa de Habilidades · Data & Analytics</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering & AI Portfolio</title>
   <style>
-    /* Base */
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: 'Inter', Arial, Helvetica, sans-serif;
-      background: url('https://picsum.photos/1600/900?blur=5') no-repeat center center fixed;
-      background-size: cover;
-      color: #e5e7eb;
-      display: flex;
-      line-height: 1.6;
+      padding: 0;
+      background-color: #f4f7fa;
+      color: #333;
     }
-    a { color: #58a6ff; text-decoration: none; }
-    h1,h2,h3 { color: #f0f6fc; }
-
-    /* Sidebar */
-    .sidebar {
-      width: 260px;
-      height: 100vh;
-      background: rgba(20, 25, 45, 0.9);
-      backdrop-filter: blur(12px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 30px 20px;
-      position: fixed;
-      left: 0;
-      top: 0;
-      border-right: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 2px 0 15px rgba(0,0,0,0.2);
-    }
-    .sidebar h1 {
-      font-size: 22px;
-      font-weight: 600;
-      margin: 10px 0 25px 0;
+    header {
+      background-color: #1f2937;
+      color: white;
       text-align: center;
+      padding: 2rem 1rem;
     }
-    .sidebar nav {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 20px;
-      flex-grow: 1;
-      width: 100%;
-    }
-    .sidebar nav a {
-      color: #e5e7eb;
-      padding: 10px;
-      text-align: center;
-      border-radius: 8px;
-      transition: 0.3s;
-      font-weight: 500;
-    }
-    .sidebar nav a:hover {
-      background: rgba(88,166,255,0.2);
-      transform: translateX(5px);
-    }
-
-    /* Content */
-    .content {
-      margin-left: 280px;
-      padding: 50px 40px;
-      max-width: 900px;
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
     }
     section {
-      margin-bottom: 60px;
-      background: rgba(20, 25, 45, 0.8);
-      border-radius: 14px;
-      padding: 25px 30px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
-      transition: transform 0.3s;
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
     }
-    section:hover {
-      transform: translateY(-3px);
+    section h2 {
+      color: #1f2937;
+      border-bottom: 3px solid #3b82f6;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
     }
-    ul { padding-left: 18px; }
-    li { margin-bottom: 6px; }
-
-    footer {
-      text-align: center;
-      font-size: 14px;
-      color: #94a3b8;
-      margin-top: 50px;
+    ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
     }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .sidebar { position: relative; width: 100%; height: auto; flex-direction: row; padding: 15px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1);}
-      .sidebar h1 { font-size: 18px; margin: 0; }
-      .sidebar nav { flex-direction: row; gap: 10px; flex-wrap: wrap; }
-      .content { margin-left: 0; padding: 30px 20px; }
+    .project {
+      background: white;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .project h3 {
+      margin-top: 0;
+      color: #2563eb;
+    }
+    .project p {
+      margin: 0.3rem 0;
+    }
+    a {
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      body {
+        font-size: 0.95rem;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <h1>Mapa de Habilidades</h1>
-    <nav>
-      <a href="#engenharia">Engenharia de Dados</a>
-      <a href="#ciencia">Ciência de Dados</a>
-      <a href="#analytics">Analytics & BI</a>
-      <a href="#ml">Machine Learning & IA</a>
-      <a href="#cloud">Cloud & DevOps</a>
-    </nav>
-  </div>
+  <header>
+    <h1>Engineering & AI Portfolio</h1>
+    <p>Showcasing Data Engineering and Machine Learning & AI projects with real business impact.</p>
+  </header>
 
-  <!-- Main Content -->
-  <div class="content">
-    <section id="engenharia">
-      <h2>🔧 Engenharia de Dados</h2>
-      <ul>
-        <li><strong>Fundamentos:</strong> ETL, ELT, modelagem dimensional</li>
-        <li><strong>Ferramentas:</strong> Apache Spark, Databricks, dbt, Airflow</li>
-        <li><strong>Bancos de Dados:</strong> SQL, NoSQL, Data Lake, Data Warehouse</li>
-        <li><strong>Cloud:</strong> AWS Glue, GCP BigQuery, Azure Synapse</li>
-        <li><strong>Boas práticas:</strong> DataOps, versionamento, testes de dados</li>
-      </ul>
-    </section>
+  <!-- Data Engineering Section -->
+  <section>
+    <h2>Data Engineering</h2>
+    <h4>Technologies</h4>
+    <ul>
+      <li>ETL & ELT (Airflow, dbt, Spark, Databricks)</li>
+      <li>Data Modeling (Dimensional, Medallion Architecture)</li>
+      <li>Cloud Platforms (AWS, GCP, BigQuery)</li>
+      <li>Data Warehousing (Snowflake, Athena)</li>
+    </ul>
 
-    <section id="ciencia">
-      <h2>📊 Ciência de Dados</h2>
-      <ul>
-        <li><strong>Fundamentos:</strong> Estatística, Probabilidade, Álgebra Linear</li>
-        <li><strong>Programação:</strong> Python (pandas, scikit-learn), R</li>
-        <li><strong>Machine Learning:</strong> regressão, classificação, clustering</li>
-        <li><strong>Deep Learning:</strong> redes neurais, transformers</li>
-        <li><strong>Validação:</strong> métricas (Accuracy, F1, AUC, LogLoss)</li>
-      </ul>
-    </section>
+    <div class="project">
+      <h3>Medallion Data Architecture</h3>
+      <p><strong>Objective:</strong> Implemented the Bronze, Silver, and Gold layered data approach for structured ingestion and transformation.</p>
+      <p><strong>Business Value:</strong> Provides a scalable and standardized architecture that improves data governance, quality, and downstream analytics.</p>
+      <p><a href="https://github.com/danmca19/Medallion_Data_Architecture" target="_blank">See more details</a></p>
+    </div>
 
-    <section id="analytics">
-      <h2>📈 Analytics & BI</h2>
-      <ul>
-        <li><strong>Visualização:</strong> Power BI, Tableau, Looker, Metabase</li>
-        <li><strong>Storytelling:</strong> data storytelling, design de dashboards</li>
-        <li><strong>Métricas de Negócio:</strong> KPIs, NRR, Churn, LTV, CAC</li>
-        <li><strong>SQL Avançado:</strong> CTEs, Window Functions, otimização</li>
-      </ul>
-    </section>
+    <div class="project">
+      <h3>BigQuery Analytics</h3>
+      <p><strong>Objective:</strong> Designed analytical models using Google BigQuery to optimize query performance on large datasets.</p>
+      <p><strong>Business Value:</strong> Enables faster decision-making and cost efficiency in handling terabytes of structured business data.</p>
+      <p><a href="https://github.com/danmca19/BigQuery" target="_blank">See more details</a></p>
+    </div>
 
-    <section id="ml">
-      <h2>🤖 Machine Learning & IA</h2>
-      <ul>
-        <li><strong>Feature Engineering:</strong> encoding, imputação, seleção</li>
-        <li><strong>MLOps:</strong> CI/CD de modelos, MLflow, Model Registry</li>
-        <li><strong>Séries Temporais:</strong> ARIMA, Prophet, LSTMs</li>
-        <li><strong>NLP:</strong> embeddings, LLMs, classificação de texto</li>
-        <li><strong>Visão Computacional:</strong> CNNs, aplicações práticas</li>
-      </ul>
-    </section>
+    <div class="project">
+      <h3>DBT Orders Transformation</h3>
+      <p><strong>Objective:</strong> Built modular dbt models to clean, transform, and document a retail orders dataset.</p>
+      <p><strong>Business Value:</strong> Provides transparent and reusable data transformations, improving trust and agility for business reporting.</p>
+      <p><a href="https://github.com/danmca19/DBT_Pedidos" target="_blank">See more details</a></p>
+    </div>
 
-    <section id="cloud">
-      <h2>☁️ Cloud & DevOps</h2>
-      <ul>
-        <li><strong>Infraestrutura:</strong> Docker, Kubernetes</li>
-        <li><strong>Orquestração:</strong> Airflow, Prefect</li>
-        <li><strong>Pipelines:</strong> GitHub Actions, Jenkins</li>
-        <li><strong>Monitoramento:</strong> Prometheus, Grafana</li>
-        <li><strong>Segurança:</strong> autenticação, compliance de dados</li>
-      </ul>
-    </section>
+    <div class="project">
+      <h3>GCP Data Pipeline</h3>
+      <p><strong>Objective:</strong> Developed an end-to-end ingestion and transformation pipeline on Google Cloud.</p>
+      <p><strong>Business Value:</strong> Streamlined data flows reduce manual effort, enhance scalability, and improve time-to-insight for business users.</p>
+      <p><a href="https://github.com/danmca19/GCP_Pipeline" target="_blank">See more details</a></p>
+    </div>
+  </section>
 
-    <footer>
-      © <script>document.write(new Date().getFullYear())</script> · Mapa de Habilidades em Dados & Analytics
-    </footer>
-  </div>
+  <!-- Machine Learning & AI Section -->
+  <section>
+    <h2>Machine Learning & AI</h2>
+    <h4>Technologies</h4>
+    <ul>
+      <li>Python (pandas, numpy, scikit-learn, transformers)</li>
+      <li>Machine Learning (classification, regression, churn prediction)</li>
+      <li>Time Series & Forecasting</li>
+      <li>Synthetic Data Generation</li>
+    </ul>
+
+    <div class="project">
+      <h3>Synthetic Data Generation for Healthcare Analytics</h3>
+      <p><strong>Objective:</strong> Created synthetic healthcare data for training ML models without exposing sensitive information.</p>
+      <p><strong>Business Value:</strong> Enhances patient privacy while still enabling robust predictive analytics for healthcare providers.</p>
+      <p><a href="https://github.com/danmca19/Synthetic_Data_Generation_for_Healthcare_Analytics" target="_blank">See more details</a></p>
+    </div>
+
+    <div class="project">
+      <h3>Hotel Cancellations Prediction</h3>
+      <p><strong>Objective:</strong> Built ML models to predict hotel booking cancellations based on customer and reservation features.</p>
+      <p><strong>Business Value:</strong> Improves revenue management and helps optimize overbooking strategies for hospitality businesses.</p>
+      <p><a href="https://github.com/danmca19/HotelCancelations" target="_blank">See more details</a></p>
+    </div>
+
+    <div class="project">
+      <h3>Telecom Customer Churn Prediction</h3>
+      <p><strong>Objective:</strong> Developed churn prediction models comparing classifiers to identify at-risk telecom customers.</p>
+      <p><strong>Business Value:</strong> Reduces customer attrition and increases retention through targeted marketing and service interventions.</p>
+      <p><a href="https://github.com/danmca19/Telecom_Churn" target="_blank">See more details</a></p>
+    </div>
+  </section>
 </body>
 </html>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mapa de Habilidades · Data & Analytics</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering & AI Portfolio</title>
   <style>
-    /* Base */
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: 'Inter', Arial, Helvetica, sans-serif;
-      background: url('https://picsum.photos/1600/900?blur=5') no-repeat center center fixed;
-      background-size: cover;
-      color: #e5e7eb;
-      display: flex;
-      line-height: 1.6;
+      padding: 0;
+      background-color: #f4f7fa;
+      color: #333;
     }
-    a { color: #58a6ff; text-decoration: none; }
-    h1,h2,h3 { color: #f0f6fc; }
-
-    /* Sidebar */
-    .sidebar {
-      width: 260px;
-      height: 100vh;
-      background: rgba(20, 25, 45, 0.9);
-      backdrop-filter: blur(12px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 30px 20px;
-      position: fixed;
-      left: 0;
-      top: 0;
-      border-right: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 2px 0 15px rgba(0,0,0,0.2);
-    }
-    .sidebar h1 {
-      font-size: 22px;
-      font-weight: 600;
-      margin: 10px 0 25px 0;
+    header {
+      background-color: #1f2937;
+      color: white;
       text-align: center;
+      padding: 2rem 1rem;
     }
-    .sidebar nav {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 20px;
-      flex-grow: 1;
-      width: 100%;
-    }
-    .sidebar nav a {
-      color: #e5e7eb;
-      padding: 10px;
-      text-align: center;
-      border-radius: 8px;
-      transition: 0.3s;
-      font-weight: 500;
-    }
-    .sidebar nav a:hover {
-      background: rgba(88,166,255,0.2);
-      transform: translateX(5px);
-    }
-
-    /* Content */
-    .content {
-      margin-left: 280px;
-      padding: 50px 40px;
-      max-width: 900px;
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
     }
     section {
-      margin-bottom: 60px;
-      background: rgba(20, 25, 45, 0.8);
-      border-radius: 14px;
-      padding: 25px 30px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
-      transition: transform 0.3s;
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
     }
-    section:hover {
-      transform: translateY(-3px);
+    section h2 {
+      color: #1f2937;
+      border-bottom: 3px solid #3b82f6;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
     }
-    ul { padding-left: 18px; }
-    li { margin-bottom: 6px; }
-
-    footer {
-      text-align: center;
-      font-size: 14px;
-      color: #94a3b8;
-      margin-top: 50px;
+    ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
     }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .sidebar { position: relative; width: 100%; height: auto; flex-direction: row; padding: 15px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1);}
-      .sidebar h1 { font-size: 18px; margin: 0; }
-      .sidebar nav { flex-direction: row; gap: 10px; flex-wrap: wrap; }
-      .content { margin-left: 0; padding: 30px 20px; }
+    .project {
+      background: white;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .project h3 {
+      margin-top: 0;
+      color: #2563eb;
+    }
+    .project p {
+      margin: 0.3rem 0;
+    }
+    a {
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      body {
+        font-size: 0.95rem;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <h1>Mapa de Habilidades</h1>
-    <nav>
-      <a href="#engenharia">Engenharia de Dados</a>
-      <a href="#ciencia">Ciência de Dados</a>
-      <a href="#analytics">Analytics & BI</a>
-      <a href="#ml">Machine Learning & IA</a>
-      <a href="#cloud">Cloud & DevOps</a>
-    </nav>
-  </div>
+  <header>
+    <h1>Engineering & AI Portfolio</h1>
+    <p>Showcasing Data Engineering and Machine Learning & AI projects with real business impact.</p>
+  </header>
 
-  <!-- Main Content -->
-  <div class="content">
-    <section id="engenharia">
-      <h2>🔧 Engenharia de Dados</h2>
-      <ul>
-        <li><strong>Fundamentos:</strong> ETL, ELT, modelagem dimensional</li>
-        <li><strong>Ferramentas:</strong> Apache Spark, Databricks, dbt, Airflow</li>
-        <li><strong>Bancos de Dados:</strong> SQL, NoSQL, Data Lake, Data Warehouse</li>
-        <li><strong>Cloud:</strong> AWS Glue, GCP BigQuery, Azure Synapse</li>
-        <li><strong>Boas práticas:</strong> DataOps, versionamento, testes de dados</li>
-      </ul>
-    </section>
+  <!-- Data Engineering Section -->
+  <section>
+    <h2>Data Engineering</h2>
+    <h4>Technologies</h4>
+    <ul>
+      <li>ETL & ELT (Airflow, dbt, Spark, Databricks)</li>
+      <li>Data Modeling (Dimensional, Medallion Architecture)</li>
+      <li>Cloud Platforms (AWS, GCP, BigQuery)</li>
+      <li>Data Warehousing (Snowflake, Athena)</li>
+    </ul>
 
-    <section id="ciencia">
-      <h2>📊 Ciência de Dados</h2>
-      <ul>
-        <li><strong>Fundamentos:</strong> Estatística, Probabilidade, Álgebra Linear</li>
-        <li><strong>Programação:</strong> Python (pandas, scikit-learn), R</li>
-        <li><strong>Machine Learning:</strong> regressão, classificação, clustering</li>
-        <li><strong>Deep Learning:</strong> redes neurais, transformers</li>
-        <li><strong>Validação:</strong> métricas (Accuracy, F1, AUC, LogLoss)</li>
-      </ul>
-    </section>
+    <div class="project">
+      <h3>Medallion Data Architecture</h3>
+      <p><strong>Objective:</strong> Implemented the Bronze, Silver, and Gold layered data approach for structured ingestion and transformation.</p>
+      <p><strong>Business Value:</strong> Provides a scalable and standardized architecture that improves data governance, quality, and downstream analytics.</p>
+      <p><a href="https://github.com/danmca19/Medallion_Data_Architecture" target="_blank">See more details</a></p>
+    </div>
 
-    <section id="analytics">
-      <h2>📈 Analytics & BI</h2>
-      <ul>
-        <li><strong>Visualização:</strong> Power BI, Tableau, Looker, Metabase</li>
-        <li><strong>Storytelling:</strong> data storytelling, design de dashboards</li>
-        <li><strong>Métricas de Negócio:</strong> KPIs, NRR, Churn, LTV, CAC</li>
-        <li><strong>SQL Avançado:</strong> CTEs, Window Functions, otimização</li>
-      </ul>
-    </section>
+    <div class="project">
+      <h3>BigQuery Analytics</h3>
+      <p><strong>Objective:</strong> Designed analytical models using Google BigQuery to optimize query performance on large datasets.</p>
+      <p><strong>Business Value:</strong> Enables faster decision-making and cost efficiency in handling terabytes of structured business data.</p>
+      <p><a href="https://github.com/danmca19/BigQuery" target="_blank">See more details</a></p>
+    </div>
 
-    <section id="ml">
-      <h2>🤖 Machine Learning & IA</h2>
-      <ul>
-        <li><strong>Feature Engineering:</strong> encoding, imputação, seleção</li>
-        <li><strong>MLOps:</strong> CI/CD de modelos, MLflow, Model Registry</li>
-        <li><strong>Séries Temporais:</strong> ARIMA, Prophet, LSTMs</li>
-        <li><strong>NLP:</strong> embeddings, LLMs, classificação de texto</li>
-        <li><strong>Visão Computacional:</strong> CNNs, aplicações práticas</li>
-      </ul>
-    </section>
+    <div class="project">
+      <h3>DBT Orders Transformation</h3>
+      <p><strong>Objective:</strong> Built modular dbt models to clean, transform, and document a retail orders dataset.</p>
+      <p><strong>Business Value:</strong> Provides transparent and reusable data transformations, improving trust and agility for business reporting.</p>
+      <p><a href="https://github.com/danmca19/DBT_Pedidos" target="_blank">See more details</a></p>
+    </div>
 
-    <section id="cloud">
-      <h2>☁️ Cloud & DevOps</h2>
-      <ul>
-        <li><strong>Infraestrutura:</strong> Docker, Kubernetes</li>
-        <li><strong>Orquestração:</strong> Airflow, Prefect</li>
-        <li><strong>Pipelines:</strong> GitHub Actions, Jenkins</li>
-        <li><strong>Monitoramento:</strong> Prometheus, Grafana</li>
-        <li><strong>Segurança:</strong> autenticação, compliance de dados</li>
-      </ul>
-    </section>
+    <div class="project">
+      <h3>GCP Data Pipeline</h3>
+      <p><strong>Objective:</strong> Developed an end-to-end ingestion and transformation pipeline on Google Cloud.</p>
+      <p><strong>Business Value:</strong> Streamlined data flows reduce manual effort, enhance scalability, and improve time-to-insight for business users.</p>
+      <p><a href="https://github.com/danmca19/GCP_Pipeline" target="_blank">See more details</a></p>
+    </div>
+  </section>
 
-    <footer>
-      © <script>document.write(new Date().getFullYear())</script> · Mapa de Habilidades em Dados & Analytics
-    </footer>
-  </div>
+  <!-- Machine Learning & AI Section -->
+  <section>
+    <h2>Machine Learning & AI</h2>
+    <h4>Technologies</h4>
+    <ul>
+      <li>Python (pandas, numpy, scikit-learn, transformers)</li>
+      <li>Machine Learning (classification, regression, churn prediction)</li>
+      <li>Time Series & Forecasting</li>
+      <li>Synthetic Data Generation</li>
+    </ul>
+
+    <div class="project">
+      <h3>Synthetic Data Generation for Healthcare Analytics</h3>
+      <p><strong>Objective:</strong> Created synthetic healthcare data for training ML models without exposing sensitive information.</p>
+      <p><strong>Business Value:</strong> Enhances patient privacy while still enabling robust predictive analytics for healthcare providers.</p>
+      <p><a href="https://github.com/danmca19/Synthetic_Data_Generation_for_Healthcare_Analytics" target="_blank">See more details</a></p>
+    </div>
+
+    <div class="project">
+      <h3>Hotel Cancellations Prediction</h3>
+      <p><strong>Objective:</strong> Built ML models to predict hotel booking cancellations based on customer and reservation features.</p>
+      <p><strong>Business Value:</strong> Improves revenue management and helps optimize overbooking strategies for hospitality businesses.</p>
+      <p><a href="https://github.com/danmca19/HotelCancelations" target="_blank">See more details</a></p>
+    </div>
+
+    <div class="project">
+      <h3>Telecom Customer Churn Prediction</h3>
+      <p><strong>Objective:</strong> Developed churn prediction models comparing classifiers to identify at-risk telecom customers.</p>
+      <p><strong>Business Value:</strong> Reduces customer attrition and increases retention through targeted marketing and service interventions.</p>
+      <p><a href="https://github.com/danmca19/Telecom_Churn" target="_blank">See more details</a></p>
+    </div>
+  </section>
 </body>
 </html>
+
