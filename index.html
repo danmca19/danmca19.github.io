@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Daniel Antunes · Data & Analytics Portfolio</title>
+  <title>Mapa de Habilidades · Data & Analytics</title>
   <style>
     /* Base */
     body {
@@ -34,12 +34,179 @@
       border-right: 1px solid rgba(255,255,255,0.1);
       box-shadow: 2px 0 15px rgba(0,0,0,0.2);
     }
-    .sidebar img {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      border: 3px solid #58a6ff;
-      margin-bottom: 15px;
+    .sidebar h1 {
+      font-size: 22px;
+      font-weight: 600;
+      margin: 10px 0 25px 0;
+      text-align: center;
+    }
+    .sidebar nav {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+      flex-grow: 1;
+      width: 100%;
+    }
+    .sidebar nav a {
+      color: #e5e7eb;
+      padding: 10px;
+      text-align: center;
+      border-radius: 8px;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+    .sidebar nav a:hover {
+      background: rgba(88,166,255,0.2);
+      transform: translateX(5px);
+    }
+
+    /* Content */
+    .content {
+      margin-left: 280px;
+      padding: 50px 40px;
+      max-width: 900px;
+    }
+    section {
+      margin-bottom: 60px;
+      background: rgba(20, 25, 45, 0.8);
+      border-radius: 14px;
+      padding: 25px 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+      transition: transform 0.3s;
+    }
+    section:hover {
+      transform: translateY(-3px);
+    }
+    ul { padding-left: 18px; }
+    li { margin-bottom: 6px; }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #94a3b8;
+      margin-top: 50px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .sidebar { position: relative; width: 100%; height: auto; flex-direction: row; padding: 15px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1);}
+      .sidebar h1 { font-size: 18px; margin: 0; }
+      .sidebar nav { flex-direction: row; gap: 10px; flex-wrap: wrap; }
+      .content { margin-left: 0; padding: 30px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h1>Mapa de Habilidades</h1>
+    <nav>
+      <a href="#engenharia">Engenharia de Dados</a>
+      <a href="#ciencia">Ciência de Dados</a>
+      <a href="#analytics">Analytics & BI</a>
+      <a href="#ml">Machine Learning & IA</a>
+      <a href="#cloud">Cloud & DevOps</a>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <section id="engenharia">
+      <h2>🔧 Engenharia de Dados</h2>
+      <ul>
+        <li><strong>Fundamentos:</strong> ETL, ELT, modelagem dimensional</li>
+        <li><strong>Ferramentas:</strong> Apache Spark, Databricks, dbt, Airflow</li>
+        <li><strong>Bancos de Dados:</strong> SQL, NoSQL, Data Lake, Data Warehouse</li>
+        <li><strong>Cloud:</strong> AWS Glue, GCP BigQuery, Azure Synapse</li>
+        <li><strong>Boas práticas:</strong> DataOps, versionamento, testes de dados</li>
+      </ul>
+    </section>
+
+    <section id="ciencia">
+      <h2>📊 Ciência de Dados</h2>
+      <ul>
+        <li><strong>Fundamentos:</strong> Estatística, Probabilidade, Álgebra Linear</li>
+        <li><strong>Programação:</strong> Python (pandas, scikit-learn), R</li>
+        <li><strong>Machine Learning:</strong> regressão, classificação, clustering</li>
+        <li><strong>Deep Learning:</strong> redes neurais, transformers</li>
+        <li><strong>Validação:</strong> métricas (Accuracy, F1, AUC, LogLoss)</li>
+      </ul>
+    </section>
+
+    <section id="analytics">
+      <h2>📈 Analytics & BI</h2>
+      <ul>
+        <li><strong>Visualização:</strong> Power BI, Tableau, Looker, Metabase</li>
+        <li><strong>Storytelling:</strong> data storytelling, design de dashboards</li>
+        <li><strong>Métricas de Negócio:</strong> KPIs, NRR, Churn, LTV, CAC</li>
+        <li><strong>SQL Avançado:</strong> CTEs, Window Functions, otimização</li>
+      </ul>
+    </section>
+
+    <section id="ml">
+      <h2>🤖 Machine Learning & IA</h2>
+      <ul>
+        <li><strong>Feature Engineering:</strong> encoding, imputação, seleção</li>
+        <li><strong>MLOps:</strong> CI/CD de modelos, MLflow, Model Registry</li>
+        <li><strong>Séries Temporais:</strong> ARIMA, Prophet, LSTMs</li>
+        <li><strong>NLP:</strong> embeddings, LLMs, classificação de texto</li>
+        <li><strong>Visão Computacional:</strong> CNNs, aplicações práticas</li>
+      </ul>
+    </section>
+
+    <section id="cloud">
+      <h2>☁️ Cloud & DevOps</h2>
+      <ul>
+        <li><strong>Infraestrutura:</strong> Docker, Kubernetes</li>
+        <li><strong>Orquestração:</strong> Airflow, Prefect</li>
+        <li><strong>Pipelines:</strong> GitHub Actions, Jenkins</li>
+        <li><strong>Monitoramento:</strong> Prometheus, Grafana</li>
+        <li><strong>Segurança:</strong> autenticação, compliance de dados</li>
+      </ul>
+    </section>
+
+    <footer>
+      © <script>document.write(new Date().getFullYear())</script> · Mapa de Habilidades em Dados & Analytics
+    </footer>
+  </div>
+</body>
+</html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mapa de Habilidades · Data & Analytics</title>
+  <style>
+    /* Base */
+    body {
+      margin: 0;
+      font-family: 'Inter', Arial, Helvetica, sans-serif;
+      background: url('https://picsum.photos/1600/900?blur=5') no-repeat center center fixed;
+      background-size: cover;
+      color: #e5e7eb;
+      display: flex;
+      line-height: 1.6;
+    }
+    a { color: #58a6ff; text-decoration: none; }
+    h1,h2,h3 { color: #f0f6fc; }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      height: 100vh;
+      background: rgba(20, 25, 45, 0.9);
+      backdrop-filter: blur(12px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+      position: fixed;
+      left: 0;
+      top: 0;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 2px 0 15px rgba(0,0,0,0.2);
     }
     .sidebar h1 {
       font-size: 22px;
@@ -67,15 +234,6 @@
       background: rgba(88,166,255,0.2);
       transform: translateX(5px);
     }
-    .sidebar .social {
-      display: flex;
-      gap: 12px;
-      margin-top: auto;
-    }
-    .sidebar .social a {
-      color: #58a6ff;
-      font-weight: 600;
-    }
 
     /* Content */
     .content {
@@ -94,18 +252,9 @@
     section:hover {
       transform: translateY(-3px);
     }
-    .badges img { margin: 5px; vertical-align: middle; }
-    .project {
-      margin-bottom: 25px;
-      padding: 18px 20px;
-      border-radius: 10px;
-      background: rgba(30,41,59,0.85);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.25);
-      transition: transform 0.3s;
-    }
-    .project:hover {
-      transform: translateY(-3px);
-    }
+    ul { padding-left: 18px; }
+    li { margin-bottom: 6px; }
+
     footer {
       text-align: center;
       font-size: 14px;
@@ -116,7 +265,6 @@
     /* Responsive */
     @media (max-width: 900px) {
       .sidebar { position: relative; width: 100%; height: auto; flex-direction: row; padding: 15px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1);}
-      .sidebar img { width: 60px; height: 60px; margin-bottom: 0; margin-right: 15px;}
       .sidebar h1 { font-size: 18px; margin: 0; }
       .sidebar nav { flex-direction: row; gap: 10px; flex-wrap: wrap; }
       .content { margin-left: 0; padding: 30px 20px; }
@@ -126,86 +274,75 @@
 <body>
   <!-- Sidebar -->
   <div class="sidebar">
-    <img src="https://avatars.githubusercontent.com/u/7539003?v=4" alt="Daniel Antunes">
-    <h1>Daniel Antunes</h1>
+    <h1>Mapa de Habilidades</h1>
     <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#beliefs">Beliefs</a>
-      <a href="https://br.linkedin.com/in/danielmcantunes" target="_blank">LinkedIn</a>
-      <a href="https://github.com/danmca19" target="_blank">GitHub</a>
+      <a href="#engenharia">Engenharia de Dados</a>
+      <a href="#ciencia">Ciência de Dados</a>
+      <a href="#analytics">Analytics & BI</a>
+      <a href="#ml">Machine Learning & IA</a>
+      <a href="#cloud">Cloud & DevOps</a>
     </nav>
-    <div class="social">
-      <a href="https://br.linkedin.com/in/danielmcantunes" target="_blank">LinkedIn</a>
-      <a href="https://github.com/danmca19" target="_blank">GitHub</a>
-    </div>
   </div>
 
   <!-- Main Content -->
   <div class="content">
-    <section id="about">
-      <h2>👋 Hi there, I'm Daniel Antunes</h2>
-      <p><strong>Data & Analytics Professional</strong> | <strong>Analytics Engineer</strong> | <strong>DataOps Specialist</strong></p>
-      <p>I'm a Data & Analytics professional passionate about turning complex data into actionable insights to drive business growth and operational efficiency. 
-      I've led projects across <strong>Latin America, the U.S., Canada, the Philippines, and India</strong>, partnering with stakeholders to deliver scalable and intelligent solutions.</p>
-      <p>With a background in engineering and business analytics, I bring a strategic view to technical solutions—connecting data, processes, and impact.</p>
-    </section>
-
-    <section id="skills">
-      <h2>💻 Skills & Technologies</h2>
-      <div class="badges">
-        <p><strong>Languages & Data Tools:</strong><br>
-        <img src="https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white">
-        <img src="https://img.shields.io/badge/-R-276DC3?logo=r&logoColor=white">
-        <img src="https://img.shields.io/badge/-SQL-336791?logo=postgresql&logoColor=white">
-        <img src="https://img.shields.io/badge/-DAX-F2C811?logo=powerbi&logoColor=black"></p>
-        <p><strong>Data Engineering & Orchestration:</strong><br>
-        <img src="https://img.shields.io/badge/-Databricks-EF4B2C?logo=databricks&logoColor=white">
-        <img src="https://img.shields.io/badge/-Snowflake-29B5E8?logo=snowflake&logoColor=white">
-        <img src="https://img.shields.io/badge/-dbt-FF694B?logo=dbt&logoColor=white">
-        <img src="https://img.shields.io/badge/-Airflow-017CEE?logo=apacheairflow&logoColor=white">
-        <img src="https://img.shields.io/badge/-Terraform-623CE4?logo=terraform&logoColor=white"></p>
-        <p><strong>Cloud Platforms:</strong><br>
-        <img src="https://img.shields.io/badge/-Google_Cloud-4285F4?logo=googlecloud&logoColor=white">
-        <img src="https://img.shields.io/badge/-AWS-232F3E?logo=amazonaws&logoColor=white"></p>
-        <p><strong>Visualization:</strong><br>
-        <img src="https://img.shields.io/badge/-PowerBI-F2C811?logo=powerbi&logoColor=black">
-        <img src="https://img.shields.io/badge/-Looker%20Studio-4285F4?logo=googlestudio&logoColor=white"></p>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>💼 Key Projects</h2>
-      <div class="project">
-        <h3><a href="https://github.com/danmca19/Telecom_Churn">Customer Churn Prediction – Telecom</a></h3>
-        <p>Machine learning pipeline to predict telecom churn, with insights for retention strategies.</p>
-      </div>
-      <div class="project">
-        <h3><a href="https://github.com/danmca19/HotelCancelations">Hotel Booking Cancellation Analysis</a></h3>
-        <p>Classification project to predict hotel booking cancellations and optimize occupancy.</p>
-      </div>
-      <div class="project">
-        <h3><a href="https://github.com/danmca19/Medallion_Data_Architecture">Medallion Data Architecture – Databricks</a></h3>
-        <p>Implementation of Medallion architecture (Bronze → Silver → Gold) for scalable analytics.</p>
-      </div>
-    </section>
-
-    <section id="beliefs">
-      <h2>🚀 Core Beliefs & Expertise</h2>
+    <section id="engenharia">
+      <h2>🔧 Engenharia de Dados</h2>
       <ul>
-        <li><strong>Code with context:</strong> Tools are only as useful as the business questions they help answer.</li>
-        <li><strong>Documentation and reproducibility:</strong> Well-structured notebooks, READMEs and CI pipelines matter.</li>
-        <li><strong>Cross-functional thinking:</strong> The best analytics solutions start with understanding the problem from all sides.</li>
-        <li><strong>Applied AI:</strong> Leveraging skills in OCR, RPA, and predictive modeling to deliver business solutions.</li>
+        <li><strong>Fundamentos:</strong> ETL, ELT, modelagem dimensional</li>
+        <li><strong>Ferramentas:</strong> Apache Spark, Databricks, dbt, Airflow</li>
+        <li><strong>Bancos de Dados:</strong> SQL, NoSQL, Data Lake, Data Warehouse</li>
+        <li><strong>Cloud:</strong> AWS Glue, GCP BigQuery, Azure Synapse</li>
+        <li><strong>Boas práticas:</strong> DataOps, versionamento, testes de dados</li>
       </ul>
-      <p><em>Always learning. Always building.</em> 🧠💡</p>
+    </section>
+
+    <section id="ciencia">
+      <h2>📊 Ciência de Dados</h2>
+      <ul>
+        <li><strong>Fundamentos:</strong> Estatística, Probabilidade, Álgebra Linear</li>
+        <li><strong>Programação:</strong> Python (pandas, scikit-learn), R</li>
+        <li><strong>Machine Learning:</strong> regressão, classificação, clustering</li>
+        <li><strong>Deep Learning:</strong> redes neurais, transformers</li>
+        <li><strong>Validação:</strong> métricas (Accuracy, F1, AUC, LogLoss)</li>
+      </ul>
+    </section>
+
+    <section id="analytics">
+      <h2>📈 Analytics & BI</h2>
+      <ul>
+        <li><strong>Visualização:</strong> Power BI, Tableau, Looker, Metabase</li>
+        <li><strong>Storytelling:</strong> data storytelling, design de dashboards</li>
+        <li><strong>Métricas de Negócio:</strong> KPIs, NRR, Churn, LTV, CAC</li>
+        <li><strong>SQL Avançado:</strong> CTEs, Window Functions, otimização</li>
+      </ul>
+    </section>
+
+    <section id="ml">
+      <h2>🤖 Machine Learning & IA</h2>
+      <ul>
+        <li><strong>Feature Engineering:</strong> encoding, imputação, seleção</li>
+        <li><strong>MLOps:</strong> CI/CD de modelos, MLflow, Model Registry</li>
+        <li><strong>Séries Temporais:</strong> ARIMA, Prophet, LSTMs</li>
+        <li><strong>NLP:</strong> embeddings, LLMs, classificação de texto</li>
+        <li><strong>Visão Computacional:</strong> CNNs, aplicações práticas</li>
+      </ul>
+    </section>
+
+    <section id="cloud">
+      <h2>☁️ Cloud & DevOps</h2>
+      <ul>
+        <li><strong>Infraestrutura:</strong> Docker, Kubernetes</li>
+        <li><strong>Orquestração:</strong> Airflow, Prefect</li>
+        <li><strong>Pipelines:</strong> GitHub Actions, Jenkins</li>
+        <li><strong>Monitoramento:</strong> Prometheus, Grafana</li>
+        <li><strong>Segurança:</strong> autenticação, compliance de dados</li>
+      </ul>
     </section>
 
     <footer>
-      © <script>document.write(new Date().getFullYear())</script> Daniel Antunes · Built for GitHub Pages
+      © <script>document.write(new Date().getFullYear())</script> · Mapa de Habilidades em Dados & Analytics
     </footer>
   </div>
 </body>
 </html>
-
