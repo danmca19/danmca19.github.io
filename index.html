@@ -1,181 +1,282 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Engineering & AI Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     body {
+      font-family: 'Inter', sans-serif;
       margin: 0;
-      font-family: Arial, sans-serif;
-      color: #fff;
-      background: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1920') no-repeat center center fixed;
+      padding: 0;
+      background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.7)),
+                  url('https://images.unsplash.com/photo-1518770660439-4636190af475') no-repeat center center fixed;
       background-size: cover;
+      color: #f1f1f1;
     }
 
-    /* Overlay for dark transparency */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      z-index: -1;
-    }
-
-    nav {
+    .container {
       display: flex;
-      justify-content: center;
-      gap: 2rem;
-      background: rgba(0, 0, 0, 0.85);
-      padding: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      min-height: 100vh;
     }
 
-    nav a {
-      color: #00d4ff;
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background: rgba(30, 30, 30, 0.8);
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      backdrop-filter: blur(5px);
+    }
+
+    .sidebar img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar h2 {
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    .sidebar a {
       text-decoration: none;
-      font-weight: bold;
+      color: #f1f1f1;
+      margin: 0.8rem 0;
+      font-weight: 500;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    .sidebar a:hover {
+      color: #00adb5;
+    }
+
+    /* Content */
+    .content {
+      flex: 1;
+      padding: 2rem 3rem;
+    }
+
+    .highlight {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .highlight h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight p {
+      font-size: 1.2rem;
+      opacity: 0.85;
     }
 
     section {
-      max-width: 1000px;
-      margin: 3rem auto;
-      padding: 2rem;
-      background: rgba(20, 20, 20, 0.85);
-      border-radius: 12px;
+      margin-bottom: 3rem;
     }
 
-    h1, h2 {
-      text-align: center;
-      color: #00d4ff;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    li {
-      margin: 1rem 0;
-      padding: 1rem;
-      background: rgba(40, 40, 40, 0.8);
-      border-radius: 8px;
-    }
-
-    a.details-link {
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #00adb5;
       display: inline-block;
-      margin-top: 0.5rem;
-      color: #ffcc00;
-      font-weight: bold;
+      padding-bottom: 0.3rem;
     }
 
-    a.details-link:hover {
+    .tech-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 1.5rem;
+      justify-content: center;
+    }
+    
+    .tech-icons img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .tech-icons img:hover {
+        transform: scale(1.2);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: rgba(50, 50, 50, 0.85);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: contain;
+      padding: 10px 0;
+      background-color: #323232;
+    }
+
+    .project-card .content {
+      padding: 1rem;
+      flex-grow: 1;
+    }
+
+    .project-card h3 {
+      margin: 0.5rem 0;
+      font-size: 1.3rem;
+    }
+
+    .project-card p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      margin-bottom: 0.8rem;
+    }
+
+    .project-card a {
+      color: #00adb5;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .project-card a:hover {
       text-decoration: underline;
     }
 
     footer {
       text-align: center;
-      padding: 2rem;
-      background: rgba(0, 0, 0, 0.9);
-      margin-top: 3rem;
-    }
-
-    footer a {
-      color: #00d4ff;
-      margin: 0 1rem;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
+      padding: 1rem;
+      font-size: 0.9rem;
+      opacity: 0.7;
     }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav>
-    <a href="#data-engineering">Data Engineering</a>
-    <a href="#ml-ai">Machine Learning & AI</a>
-    <a href="#contacts">Contacts</a>
-  </nav>
-
-  <!-- Title -->
-  <header>
-    <h1>Engineering & AI Portfolio</h1>
-  </header>
-
-  <!-- Data Engineering Section -->
-  <section id="data-engineering">
-    <h2>Data Engineering</h2>
-    <ul>
-      <li>
-        <strong>Medallion Data Architecture</strong><br/>
-        <em>Objective:</em> Implemented a scalable Medallion Architecture with Bronze, Silver, and Gold layers.<br/>
-        <em>Business Value:</em> Ensures cleaner, trustworthy, and analytics-ready data pipelines for decision-making.<br/>
-        <a href="https://github.com/danmca19/Medallion_Data_Architecture" class="details-link" target="_blank">View more details</a>
-      </li>
-      <li>
-        <strong>BigQuery Analytics</strong><br/>
-        <em>Objective:</em> Designed a large-scale analytics warehouse on Google BigQuery.<br/>
-        <em>Business Value:</em> Optimized querying and reduced reporting time for business intelligence teams.<br/>
-        <a href="https://github.com/danmca19/BigQuery" class="details-link" target="_blank">View more details</a>
-      </li>
-      <li>
-        <strong>DBT Orders Transformation</strong><br/>
-        <em>Objective:</em> Developed dbt models to transform and structure orders data.<br/>
-        <em>Business Value:</em> Improved data transparency and reliability for sales analytics and forecasting.<br/>
-        <a href="https://github.com/danmca19/DBT_Pedidos" class="details-link" target="_blank">View more details</a>
-      </li>
-      <li>
-        <strong>GCP Data Pipeline</strong><br/>
-        <em>Objective:</em> Built an end-to-end data pipeline using GCP services.<br/>
-        <em>Business Value:</em> Enabled automated ingestion, transformation, and storage of critical datasets for business growth.<br/>
-        <a href="https://github.com/danmca19/GCP_Pipeline" class="details-link" target="_blank">View more details</a>
-      </li>
-    </ul>
-  </section>
-
-  <!-- Machine Learning & AI Section -->
-  <section id="ml-ai">
-    <h2>Machine Learning & AI</h2>
-    <ul>
-      <li>
-        <strong>Synthetic Data Generation for Healthcare Analytics</strong><br/>
-        <em>Objective:</em> Created synthetic healthcare datasets to train ML models while ensuring privacy.<br/>
-        <em>Business Value:</em> Allowed hospitals to leverage data science without exposing sensitive patient information.<br/>
-        <a href="https://github.com/danmca19/Synthetic_Data_Generation_for_Healthcare_Analytics" class="details-link" target="_blank">View more details</a>
-      </li>
-      <li>
-        <strong>Hotel Cancellations Prediction</strong><br/>
-        <em>Objective:</em> Developed ML models predicting hotel booking cancellations.<br/>
-        <em>Business Value:</em> Helped revenue managers anticipate cancellations and optimize room allocations.<br/>
-        <a href="https://github.com/danmca19/HotelCancelations" class="details-link" target="_blank">View more details</a>
-      </li>
-      <li>
-        <strong>Telecom Customer Churn Prediction</strong><br/>
-        <em>Objective:</em> Built churn prediction models using classification algorithms.<br/>
-        <em>Business Value:</em> Enabled telecom companies to proactively retain high-risk customers, reducing churn rates.<br/>
-        <a href="https://github.com/danmca19/Telecom_Churn" class="details-link" target="_blank">View more details</a>
-      </li>
-    </ul>
-  </section>
-
-  <!-- Contacts -->
-  <footer id="contacts">
-    <h2>Contacts</h2>
-    <p>
-      <a href="https://www.linkedin.com/in/danielmcantunes/" target="_blank">LinkedIn</a> | 
+  <div class="container">
+    <nav class="sidebar">
+      <img src="https://github.com/danmca19.png" alt="Profile">
+      <h2>Engineering & AI Portfolio</h2>
+      <a href="#data-engineering">Data Engineering</a>
+      <a href="#machine-learning">Machine Learning & AI</a>
+      <a href="https://www.linkedin.com/in/danielmcantunes/" target="_blank">LinkedIn</a>
       <a href="https://github.com/danmca19/" target="_blank">GitHub</a>
-    </p>
-  </footer>
+    </nav>
+
+    <main class="content">
+      <div class="highlight">
+        <h1>Daniel Antunes</h1>
+        <p>Data & Analytics Professional | Analytics Engineer | DataOps Specialist</p>
+      </div>
+
+      <div class="tech-icons">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQL">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+        <img src="https://streamlit.io/images/brand/streamlit-mark-color.png" alt="Streamlit">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP">
+        <img src="https://airflow.apache.org/images/feature-image.png" alt="Airflow">
+        <img src="https://seeklogo.com/images/D/dbt-logo-500AB0BAA7-seeklogo.com.png" alt="DBT">
+        <img src="https://iconape.com/wp-content/png_logo_vector/snowflake-logo.png" alt="Snowflake">
+     </div>
+
+
+      <section id="data-engineering">
+        <h2>Data Engineering</h2>
+
+        <div class="projects">
+          <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31" alt="Medallion Architecture">
+            <div class="content">
+              <h3>Medallion Data Architecture</h3>
+              <p>Implementing Lakehouse architecture for structured pipelines. Value: scalable, maintainable data foundation.</p>
+              <a href="https://github.com/danmca19/Medallion_Data_Architecture" target="_blank">See more details</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google BigQuery Logo">
+            <div class="content">
+              <h3>BigQuery Projects</h3>
+              <p>SQL-based scalable analytics on GCP. Value: cost-efficient queries on enterprise datasets.</p>
+              <a href="https://github.com/danmca19/BigQuery" target="_blank">See more details</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <img src="https://seeklogo.com/images/D/dbt-logo-500AB0BAA7-seeklogo.com.png" alt="DBT Pipeline">
+            <div class="content">
+              <h3>DBT Pedidos</h3>
+              <p>Transformation models in DBT. Value: governance and traceability for analytics datasets.</p>
+              <a href="https://github.com/danmca19/DBT_Pedidos" target="_blank">See more details</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9" alt="GCP Pipeline">
+            <div class="content">
+              <h3>GCP Pipeline</h3>
+              <p>Data pipeline on Google Cloud. Value: reliable ETL workflows for decision-making.</p>
+              <a href="https://github.com/danmca19/GCP_Pipeline" target="_blank">See more details</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="machine-learning">
+        <h2>Machine Learning & AI</h2>
+
+        <div class="projects">
+          <div class="project-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2966/2966486.png" alt="Synthetic Data">
+            <div class="content">
+              <h3>Synthetic Data for Healthcare</h3>
+              <p>Generating synthetic datasets for privacy-safe ML. Value: boosts analytics without exposing sensitive data.</p>
+              <a href="https://github.com/danmca19/Synthetic_Data_Generation_for_Healthcare_Analytics" target="_blank">See more details</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1560264280-88b68371db39" alt="Hotel Cancellations">
+            <div class="content">
+              <h3>Hotel Cancellations</h3>
+              <p>ML models to predict cancellations. Value: optimizes booking management and revenue forecasting.</p>
+              <a href="https://github.com/danmca19/HotelCancelations" target="_blank">See more details</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296" alt="Telecom Churn">
+            <div class="content">
+              <h3>Telecom Churn</h3>
+              <p>Classification model to predict churn. Value: supports retention strategies and revenue protection.</p>
+              <a href="https://github.com/danmca19/Telecom_Churn" target="_blank">See more details</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        © 2025 Daniel Antunes | Engineering & AI Portfolio
+      </footer>
+    </main>
+  </div>
 </body>
 </html>
