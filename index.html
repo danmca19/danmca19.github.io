@@ -1,299 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Engineering & AI Portfolio</title>
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f7fa;
-      color: #333;
+      color: #fff;
+      background: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1920') no-repeat center center fixed;
+      background-size: cover;
     }
-    header {
-      background-color: #1f2937;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
+
+    /* Overlay for dark transparency */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: -1;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
-    section {
-      padding: 2rem 1rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    section h2 {
-      color: #1f2937;
-      border-bottom: 3px solid #3b82f6;
-      display: inline-block;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
-    }
-    ul {
-      list-style-type: disc;
-      padding-left: 1.5rem;
-    }
-    .project {
-      background: white;
-      padding: 1rem 1.5rem;
-      margin-bottom: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .project h3 {
-      margin-top: 0;
-      color: #2563eb;
-    }
-    .project p {
-      margin: 0.3rem 0;
-    }
-    a {
+
+    nav a {
+      color: #00d4ff;
       text-decoration: none;
-      color: #2563eb;
       font-weight: bold;
     }
-    a:hover {
+
+    nav a:hover {
       text-decoration: underline;
     }
-    @media (max-width: 768px) {
-      body {
-        font-size: 0.95rem;
-      }
+
+    section {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: rgba(20, 20, 20, 0.85);
+      border-radius: 12px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #00d4ff;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 1rem 0;
+      padding: 1rem;
+      background: rgba(40, 40, 40, 0.8);
+      border-radius: 8px;
+    }
+
+    a.details-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #ffcc00;
+      font-weight: bold;
+    }
+
+    a.details-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.9);
+      margin-top: 3rem;
+    }
+
+    footer a {
+      color: #00d4ff;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+  <!-- Navigation -->
+  <nav>
+    <a href="#data-engineering">Data Engineering</a>
+    <a href="#ml-ai">Machine Learning & AI</a>
+    <a href="#contacts">Contacts</a>
+  </nav>
+
+  <!-- Title -->
   <header>
     <h1>Engineering & AI Portfolio</h1>
-    <p>Showcasing Data Engineering and Machine Learning & AI projects with real business impact.</p>
   </header>
 
   <!-- Data Engineering Section -->
-  <section>
+  <section id="data-engineering">
     <h2>Data Engineering</h2>
-    <h4>Technologies</h4>
     <ul>
-      <li>ETL & ELT (Airflow, dbt, Spark, Databricks)</li>
-      <li>Data Modeling (Dimensional, Medallion Architecture)</li>
-      <li>Cloud Platforms (AWS, GCP, BigQuery)</li>
-      <li>Data Warehousing (Snowflake, Athena)</li>
+      <li>
+        <strong>Medallion Data Architecture</strong><br/>
+        <em>Objective:</em> Implemented a scalable Medallion Architecture with Bronze, Silver, and Gold layers.<br/>
+        <em>Business Value:</em> Ensures cleaner, trustworthy, and analytics-ready data pipelines for decision-making.<br/>
+        <a href="https://github.com/danmca19/Medallion_Data_Architecture" class="details-link" target="_blank">View more details</a>
+      </li>
+      <li>
+        <strong>BigQuery Analytics</strong><br/>
+        <em>Objective:</em> Designed a large-scale analytics warehouse on Google BigQuery.<br/>
+        <em>Business Value:</em> Optimized querying and reduced reporting time for business intelligence teams.<br/>
+        <a href="https://github.com/danmca19/BigQuery" class="details-link" target="_blank">View more details</a>
+      </li>
+      <li>
+        <strong>DBT Orders Transformation</strong><br/>
+        <em>Objective:</em> Developed dbt models to transform and structure orders data.<br/>
+        <em>Business Value:</em> Improved data transparency and reliability for sales analytics and forecasting.<br/>
+        <a href="https://github.com/danmca19/DBT_Pedidos" class="details-link" target="_blank">View more details</a>
+      </li>
+      <li>
+        <strong>GCP Data Pipeline</strong><br/>
+        <em>Objective:</em> Built an end-to-end data pipeline using GCP services.<br/>
+        <em>Business Value:</em> Enabled automated ingestion, transformation, and storage of critical datasets for business growth.<br/>
+        <a href="https://github.com/danmca19/GCP_Pipeline" class="details-link" target="_blank">View more details</a>
+      </li>
     </ul>
-
-    <div class="project">
-      <h3>Medallion Data Architecture</h3>
-      <p><strong>Objective:</strong> Implemented the Bronze, Silver, and Gold layered data approach for structured ingestion and transformation.</p>
-      <p><strong>Business Value:</strong> Provides a scalable and standardized architecture that improves data governance, quality, and downstream analytics.</p>
-      <p><a href="https://github.com/danmca19/Medallion_Data_Architecture" target="_blank">See more details</a></p>
-    </div>
-
-    <div class="project">
-      <h3>BigQuery Analytics</h3>
-      <p><strong>Objective:</strong> Designed analytical models using Google BigQuery to optimize query performance on large datasets.</p>
-      <p><strong>Business Value:</strong> Enables faster decision-making and cost efficiency in handling terabytes of structured business data.</p>
-      <p><a href="https://github.com/danmca19/BigQuery" target="_blank">See more details</a></p>
-    </div>
-
-    <div class="project">
-      <h3>DBT Orders Transformation</h3>
-      <p><strong>Objective:</strong> Built modular dbt models to clean, transform, and document a retail orders dataset.</p>
-      <p><strong>Business Value:</strong> Provides transparent and reusable data transformations, improving trust and agility for business reporting.</p>
-      <p><a href="https://github.com/danmca19/DBT_Pedidos" target="_blank">See more details</a></p>
-    </div>
-
-    <div class="project">
-      <h3>GCP Data Pipeline</h3>
-      <p><strong>Objective:</strong> Developed an end-to-end ingestion and transformation pipeline on Google Cloud.</p>
-      <p><strong>Business Value:</strong> Streamlined data flows reduce manual effort, enhance scalability, and improve time-to-insight for business users.</p>
-      <p><a href="https://github.com/danmca19/GCP_Pipeline" target="_blank">See more details</a></p>
-    </div>
   </section>
 
   <!-- Machine Learning & AI Section -->
-  <section>
+  <section id="ml-ai">
     <h2>Machine Learning & AI</h2>
-    <h4>Technologies</h4>
     <ul>
-      <li>Python (pandas, numpy, scikit-learn, transformers)</li>
-      <li>Machine Learning (classification, regression, churn prediction)</li>
-      <li>Time Series & Forecasting</li>
-      <li>Synthetic Data Generation</li>
+      <li>
+        <strong>Synthetic Data Generation for Healthcare Analytics</strong><br/>
+        <em>Objective:</em> Created synthetic healthcare datasets to train ML models while ensuring privacy.<br/>
+        <em>Business Value:</em> Allowed hospitals to leverage data science without exposing sensitive patient information.<br/>
+        <a href="https://github.com/danmca19/Synthetic_Data_Generation_for_Healthcare_Analytics" class="details-link" target="_blank">View more details</a>
+      </li>
+      <li>
+        <strong>Hotel Cancellations Prediction</strong><br/>
+        <em>Objective:</em> Developed ML models predicting hotel booking cancellations.<br/>
+        <em>Business Value:</em> Helped revenue managers anticipate cancellations and optimize room allocations.<br/>
+        <a href="https://github.com/danmca19/HotelCancelations" class="details-link" target="_blank">View more details</a>
+      </li>
+      <li>
+        <strong>Telecom Customer Churn Prediction</strong><br/>
+        <em>Objective:</em> Built churn prediction models using classification algorithms.<br/>
+        <em>Business Value:</em> Enabled telecom companies to proactively retain high-risk customers, reducing churn rates.<br/>
+        <a href="https://github.com/danmca19/Telecom_Churn" class="details-link" target="_blank">View more details</a>
+      </li>
     </ul>
-
-    <div class="project">
-      <h3>Synthetic Data Generation for Healthcare Analytics</h3>
-      <p><strong>Objective:</strong> Created synthetic healthcare data for training ML models without exposing sensitive information.</p>
-      <p><strong>Business Value:</strong> Enhances patient privacy while still enabling robust predictive analytics for healthcare providers.</p>
-      <p><a href="https://github.com/danmca19/Synthetic_Data_Generation_for_Healthcare_Analytics" target="_blank">See more details</a></p>
-    </div>
-
-    <div class="project">
-      <h3>Hotel Cancellations Prediction</h3>
-      <p><strong>Objective:</strong> Built ML models to predict hotel booking cancellations based on customer and reservation features.</p>
-      <p><strong>Business Value:</strong> Improves revenue management and helps optimize overbooking strategies for hospitality businesses.</p>
-      <p><a href="https://github.com/danmca19/HotelCancelations" target="_blank">See more details</a></p>
-    </div>
-
-    <div class="project">
-      <h3>Telecom Customer Churn Prediction</h3>
-      <p><strong>Objective:</strong> Developed churn prediction models comparing classifiers to identify at-risk telecom customers.</p>
-      <p><strong>Business Value:</strong> Reduces customer attrition and increases retention through targeted marketing and service interventions.</p>
-      <p><a href="https://github.com/danmca19/Telecom_Churn" target="_blank">See more details</a></p>
-    </div>
   </section>
+
+  <!-- Contacts -->
+  <footer id="contacts">
+    <h2>Contacts</h2>
+    <p>
+      <a href="https://www.linkedin.com/in/danielmcantunes/" target="_blank">LinkedIn</a> | 
+      <a href="https://github.com/danmca19/" target="_blank">GitHub</a>
+    </p>
+  </footer>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Engineering & AI Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f7fa;
-      color: #333;
-    }
-    header {
-      background-color: #1f2937;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    section {
-      padding: 2rem 1rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    section h2 {
-      color: #1f2937;
-      border-bottom: 3px solid #3b82f6;
-      display: inline-block;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
-    }
-    ul {
-      list-style-type: disc;
-      padding-left: 1.5rem;
-    }
-    .project {
-      background: white;
-      padding: 1rem 1.5rem;
-      margin-bottom: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .project h3 {
-      margin-top: 0;
-      color: #2563eb;
-    }
-    .project p {
-      margin: 0.3rem 0;
-    }
-    a {
-      text-decoration: none;
-      color: #2563eb;
-      font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 768px) {
-      body {
-        font-size: 0.95rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Engineering & AI Portfolio</h1>
-    <p>Showcasing Data Engineering and Machine Learning & AI projects with real business impact.</p>
-  </header>
-
-  <!-- Data Engineering Section -->
-  <section>
-    <h2>Data Engineering</h2>
-    <h4>Technologies</h4>
-    <ul>
-      <li>ETL & ELT (Airflow, dbt, Spark, Databricks)</li>
-      <li>Data Modeling (Dimensional, Medallion Architecture)</li>
-      <li>Cloud Platforms (AWS, GCP, BigQuery)</li>
-      <li>Data Warehousing (Snowflake, Athena)</li>
-    </ul>
-
-    <div class="project">
-      <h3>Medallion Data Architecture</h3>
-      <p><strong>Objective:</strong> Implemented the Bronze, Silver, and Gold layered data approach for structured ingestion and transformation.</p>
-      <p><strong>Business Value:</strong> Provides a scalable and standardized architecture that improves data governance, quality, and downstream analytics.</p>
-      <p><a href="https://github.com/danmca19/Medallion_Data_Architecture" target="_blank">See more details</a></p>
-    </div>
-
-    <div class="project">
-      <h3>BigQuery Analytics</h3>
-      <p><strong>Objective:</strong> Designed analytical models using Google BigQuery to optimize query performance on large datasets.</p>
-      <p><strong>Business Value:</strong> Enables faster decision-making and cost efficiency in handling terabytes of structured business data.</p>
-      <p><a href="https://github.com/danmca19/BigQuery" target="_blank">See more details</a></p>
-    </div>
-
-    <div class="project">
-      <h3>DBT Orders Transformation</h3>
-      <p><strong>Objective:</strong> Built modular dbt models to clean, transform, and document a retail orders dataset.</p>
-      <p><strong>Business Value:</strong> Provides transparent and reusable data transformations, improving trust and agility for business reporting.</p>
-      <p><a href="https://github.com/danmca19/DBT_Pedidos" target="_blank">See more details</a></p>
-    </div>
-
-    <div class="project">
-      <h3>GCP Data Pipeline</h3>
-      <p><strong>Objective:</strong> Developed an end-to-end ingestion and transformation pipeline on Google Cloud.</p>
-      <p><strong>Business Value:</strong> Streamlined data flows reduce manual effort, enhance scalability, and improve time-to-insight for business users.</p>
-      <p><a href="https://github.com/danmca19/GCP_Pipeline" target="_blank">See more details</a></p>
-    </div>
-  </section>
-
-  <!-- Machine Learning & AI Section -->
-  <section>
-    <h2>Machine Learning & AI</h2>
-    <h4>Technologies</h4>
-    <ul>
-      <li>Python (pandas, numpy, scikit-learn, transformers)</li>
-      <li>Machine Learning (classification, regression, churn prediction)</li>
-      <li>Time Series & Forecasting</li>
-      <li>Synthetic Data Generation</li>
-    </ul>
-
-    <div class="project">
-      <h3>Synthetic Data Generation for Healthcare Analytics</h3>
-      <p><strong>Objective:</strong> Created synthetic healthcare data for training ML models without exposing sensitive information.</p>
-      <p><strong>Business Value:</strong> Enhances patient privacy while still enabling robust predictive analytics for healthcare providers.</p>
-      <p><a href="https://github.com/danmca19/Synthetic_Data_Generation_for_Healthcare_Analytics" target="_blank">See more details</a></p>
-    </div>
-
-    <div class="project">
-      <h3>Hotel Cancellations Prediction</h3>
-      <p><strong>Objective:</strong> Built ML models to predict hotel booking cancellations based on customer and reservation features.</p>
-      <p><strong>Business Value:</strong> Improves revenue management and helps optimize overbooking strategies for hospitality businesses.</p>
-      <p><a href="https://github.com/danmca19/HotelCancelations" target="_blank">See more details</a></p>
-    </div>
-
-    <div class="project">
-      <h3>Telecom Customer Churn Prediction</h3>
-      <p><strong>Objective:</strong> Developed churn prediction models comparing classifiers to identify at-risk telecom customers.</p>
-      <p><strong>Business Value:</strong> Reduces customer attrition and increases retention through targeted marketing and service interventions.</p>
-      <p><a href="https://github.com/danmca19/Telecom_Churn" target="_blank">See more details</a></p>
-    </div>
-  </section>
-</body>
-</html>
-
