@@ -1,263 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Engineering & AI Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Roboto, sans-serif;
-      background: url("https://img.freepik.com/free-photo/big-data-technology-with-futuristic-hologram-smartwatch_53876-108509.jpg")
-        no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering & AI Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Roboto, sans-serif;
+            background: url("https://img.freepik.com/free-photo/big-data-technology-with-futuristic-hologram-smartwatch_53876-108509.jpg")
+                no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
 
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.65);
-      min-height: 100vh;
-      display: flex;
-    }
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.65);
+            /* Removido min-height: 100vh; e display: flex; */
+        }
 
-    /* Sidebar navigation */
-    .sidebar {
-      width: 250px;
-      background: rgba(20, 20, 20, 0.9);
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+        /* Sidebar navigation */
+        .sidebar {
+            width: 250px;
+            background: rgba(20, 20, 20, 0.9);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* ✨ Código Alterado ✨ */
+            position: fixed;
+            height: 100%;
+            overflow-y: auto;
+        }
 
-    .sidebar img {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      margin-bottom: 15px;
-      border: 2px solid #fff;
-    }
+        .sidebar img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 2px solid #fff;
+        }
 
-    .sidebar h2 {
-      font-size: 20px;
-      margin-bottom: 30px;
-      text-align: center;
-    }
+        .sidebar h2 {
+            font-size: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
 
-    .sidebar a {
-      color: #fff;
-      text-decoration: none;
-      margin: 12px 0;
-      font-weight: 600;
-    }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 12px 0;
+            font-weight: 600;
+        }
 
-    .sidebar a:hover {
-      color: #00bcd4;
-    }
+        .sidebar a:hover {
+            color: #00bcd4;
+        }
 
-    /* Main content */
-    .content {
-      flex: 1;
-      padding: 40px;
-    }
+        /* Main content */
+        .content {
+            /* ✨ Código Alterado ✨ */
+            margin-left: 290px; /* Adiciona margem para o conteúdo não ficar por baixo da sidebar */
+            padding: 40px;
+        }
 
-    header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-    header h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
 
-    header p {
-      font-size: 18px;
-      color: #ddd;
-    }
+        header p {
+            font-size: 18px;
+            color: #ddd;
+        }
 
-    .tech-icons {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+        .tech-icons {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-    .tech-icons img {
-      width: 50px;
-      margin: 12px;
-      vertical-align: middle;
-    }
+        .tech-icons img {
+            width: 50px;
+            margin: 12px;
+            vertical-align: middle;
+        }
 
-    section {
-      margin-bottom: 60px;
-    }
+        section {
+            margin-bottom: 60px;
+        }
 
-    section h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #00bcd4;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
+        section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #00bcd4;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
 
-    .card {
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
-      padding: 20px;
-      text-align: center;
-      transition: transform 0.2s ease-in-out;
-    }
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s ease-in-out;
+        }
 
-    .card:hover {
-      transform: translateY(-6px);
-      background: rgba(255, 255, 255, 0.15);
-    }
+        .card:hover {
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, 0.15);
+        }
 
-    .card img {
-      width: 120px;
-      height: 120px;
-      object-fit: contain;
-      margin-bottom: 15px;
-    }
+        .card img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
 
-    .card h3 {
-      margin: 10px 0;
-      font-size: 20px;
-    }
+        .card h3 {
+            margin: 10px 0;
+            font-size: 20px;
+        }
 
-    .card p {
-      font-size: 14px;
-      color: #ccc;
-      margin-bottom: 15px;
-    }
+        .card p {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
 
-    .card a {
-      color: #00bcd4;
-      font-weight: bold;
-      text-decoration: none;
-    }
+        .card a {
+            color: #00bcd4;
+            font-weight: bold;
+            text-decoration: none;
+        }
 
-    .card a:hover {
-      text-decoration: underline;
-    }
+        .card a:hover {
+            text-decoration: underline;
+        }
 
-    .value-add {
-      font-size: 12px;
-      font-style: italic;
-      color: #888;
-      margin-top: 10px;
-      line-height: 1.4;
-    }
-  </style>
+        .value-add {
+            font-size: 12px;
+            font-style: italic;
+            color: #888;
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+    </style>
 </head>
 <body>
-  <div class="overlay">
-    <nav class="sidebar">
-      <img src="https://github.com/danmca19.png" alt="Profile Avatar">
-      <h2>Daniel Antunes</h2>
-      <a href="#data-engineering">Data Engineering</a>
-      <a href="#ml-ai">Machine Learning & AI</a>
-      <a href="https://www.linkedin.com/in/danielmcantunes/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/danmca19/" target="_blank">GitHub</a>
-    </nav>
+    <div class="overlay">
+        <nav class="sidebar">
+            <img src="https://github.com/danmca19.png" alt="Profile Avatar">
+            <h2>Daniel Antunes</h2>
+            <a href="#data-engineering">Data Engineering</a>
+            <a href="#ml-ai">Machine Learning & AI</a>
+            <a href="https://www.linkedin.com/in/danielmcantunes/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/danmca19/" target="_blank">GitHub</a>
+        </nav>
 
-    <div class="content">
-      <header>
-        <h1>Engineering & AI Portfolio</h1>
-        <p>Data & Analytics Professional | Analytics Engineer | DataOps Specialist</p>
-      </header>
+        <div class="content">
+            <header>
+                <h1>Engineering & AI Portfolio</h1>
+                <p>Data & Analytics Professional | Analytics Engineer | DataOps Specialist</p>
+            </header>
 
-      <div class="tech-icons">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQL">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
-        <img src="https://streamlit.io/images/brand/streamlit-mark-color.png" alt="Streamlit">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP">
-        <img src="https://airflow.apache.org/images/feature-image.png" alt="Airflow">
-        <img src="https://seeklogo.com/images/D/dbt-logo-500AB0BAA7-seeklogo.com.png" alt="DBT">
-        <img src="https://iconape.com/wp-content/png_logo_vector/snowflake-logo.png" alt="Snowflake">
-      </div>
+            <div class="tech-icons">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQL">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                <img src="https://streamlit.io/images/brand/streamlit-mark-color.png" alt="Streamlit">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP">
+                <img src="https://airflow.apache.org/images/feature-image.png" alt="Airflow">
+                <img src="https://seeklogo.com/images/D/dbt-logo-500AB0BAA7-seeklogo.com.png" alt="DBT">
+                <img src="https://iconape.com/wp-content/png_logo_vector/snowflake-logo.png" alt="Snowflake">
+            </div>
 
-      <section id="data-engineering">
-        <h2>Data Engineering</h2>
-        <div class="projects">
-          <div class="card">
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31" alt="Medallion Data">
-            <h3>Medallion Data Architecture</h3>
-            <p>Implementation of the Medallion Architecture with bronze, silver, and gold layers for scalable analytics. Enables reliable and governed pipelines.</p>
-            <p class="value-add">Business Value: Ensures data quality and structured access, enabling streamlined analysis and strategic decision-making.</p>
-            <a href="https://github.com/danmca19/Medallion_Data_Architecture" target="_blank">See more details</a>
-          </div>
+            <section id="data-engineering">
+                <h2>Data Engineering</h2>
+                <div class="projects">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31" alt="Medallion Data">
+                        <h3>Medallion Data Architecture</h3>
+                        <p>Implementation of the Medallion Architecture with bronze, silver, and gold layers for scalable analytics. Enables reliable and governed pipelines.</p>
+                        <p class="value-add">Business Value: Ensures data quality and structured access, enabling streamlined analysis and strategic decision-making.</p>
+                        <a href="https://github.com/danmca19/Medallion_Data_Architecture" target="_blank">See more details</a>
+                    </div>
 
-          <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/9243/9243391.png" alt="BigQuery">
-            <h3>BigQuery</h3>
-            <p>Project showcasing query optimization and warehouse best practices. Provides value by reducing costs and accelerating decision-making.</p>
-            <p class="value-add">Business Value: Reduces data processing costs and speeds up time-to-insight, improving overall operational efficiency.</p>
-            <a href="https://github.com/danmca19/BigQuery" target="_blank">See more details</a>
-          </div>
+                    <div class="card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/9243/9243391.png" alt="BigQuery">
+                        <h3>BigQuery</h3>
+                        <p>Project showcasing query optimization and warehouse best practices. Provides value by reducing costs and accelerating decision-making.</p>
+                        <p class="value-add">Business Value: Reduces data processing costs and speeds up time-to-insight, improving overall operational efficiency.</p>
+                        <a href="https://github.com/danmca19/BigQuery" target="_blank">See more details</a>
+                    </div>
 
-          <div class="card">
-            <img src="https://seeklogo.com/images/D/dbt-logo-500AB0BAA7-seeklogo.com.png" alt="DBT Pedidos">
-            <h3>DBT Orders</h3>
-            <p>ETL pipeline with DBT for retail order analytics. Improves data lineage, governance, and trust in reporting pipelines.</p>
-            <p class="value-add">Business Value: Increases the reliability of reports and dashboards, allowing business teams to make decisions with accurate data.</p>
-            <a href="https://github.com/danmca19/DBT_Pedidos" target="_blank">See more details</a>
-          </div>
+                    <div class="card">
+                        <img src="https://seeklogo.com/images/D/dbt-logo-500AB0BAA7-seeklogo.com.png" alt="DBT Pedidos">
+                        <h3>DBT Orders</h3>
+                        <p>ETL pipeline with DBT for retail order analytics. Improves data lineage, governance, and trust in reporting pipelines.</p>
+                        <p class="value-add">Business Value: Increases the reliability of reports and dashboards, allowing business teams to make decisions with accurate data.</p>
+                        <a href="https://github.com/danmca19/DBT_Pedidos" target="_blank">See more details</a>
+                    </div>
 
-          <div class="card">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP Pipeline">
-            <h3>GCP Pipeline</h3>
-            <p>Automated data pipeline deployed on GCP with full orchestration. Adds business value by scaling ingestion and reducing manual work.</p>
-            <p class="value-add">Business Value: Automation that minimizes errors and frees up team time, while enabling the scalable processing of large data volumes.</p>
-            <a href="https://github.com/danmca19/GCP_Pipeline" target="_blank">See more details</a>
-          </div>
+                    <div class="card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP Pipeline">
+                        <h3>GCP Pipeline</h3>
+                        <p>Automated data pipeline deployed on GCP with full orchestration. Adds business value by scaling ingestion and reducing manual work.</p>
+                        <p class="value-add">Business Value: Automation that minimizes errors and frees up team time, while enabling the scalable processing of large data volumes.</p>
+                        <a href="https://github.com/danmca19/GCP_Pipeline" target="_blank">See more details</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ml-ai">
+                <h2>Machine Learning & AI</h2>
+                <div class="projects">
+                    <div class="card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2966/2966486.png" alt="Synthetic Data">
+                        <h3>Synthetic Data for Healthcare</h3>
+                        <p>Generating synthetic data to enhance model training while preserving privacy. Enables healthcare innovation safely.</p>
+                        <p class="value-add">Business Value: Creation of secure data for testing, enabling the development of new solutions without exposing sensitive patient information.</p>
+                        <a href="https://github.com/danmca19/Synthetic_Data_Generation_for_Healthcare_Analytics" target="_blank">See more details</a>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2659/2659360.png" alt="Hotel Cancelations">
+                        <h3>Hotel Cancellations</h3>
+                        <p>Predictive model to anticipate booking cancellations. Improves revenue management by reducing overbooking risks.</p>
+                        <p class="value-add">Business Value: Forecasting cancellations helps optimize room occupancy and increase hotel revenue.</p>
+                        <a href="https://github.com/danmca19/HotelCancelations" target="_blank">See more details</a>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3176/3176364.png" alt="Telecom Churn">
+                        <h3>Telecom Churn</h3>
+                        <p>Classification model to predict churn in telecom customers. Supports retention strategies and improves customer lifetime value.</p>
+                        <p class="value-add">Business Value: Identifies customers at risk of leaving, allowing the company to proactively retain them and protect long-term revenue.</p>
+                        <a href="https://github.com/danmca19/Telecom_Churn" target="_blank">See more details</a>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://static.thenounproject.com/png/predictive-maintenance-icon-6950522-512.png" alt="Predictive Maintenance App">
+                        <h3>Predictive <br> Maintenance App</h3>
+                        <p>End-to-end deployment of a machine learning model using Streamlit, Docker, and Kubernetes for scalable predictive analytics.</p>
+                        <p class="value-add">Business Value: Reduces downtime by enabling predictive maintenance and increases productivity through scalable AI solutions.</p>
+                        <a href="https://github.com/danmca19/Artificial_Intelligence_with_Docker_and_Kubernetes-" target="_blank">See more details</a>
+                    </div>
+                </div>
+            </section>
         </div>
-      </section>
-
-      <section id="ml-ai">
-        <h2>Machine Learning & AI</h2>
-        <div class="projects">
-          <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/2966/2966486.png" alt="Synthetic Data">
-            <h3>Synthetic Data for Healthcare</h3>
-            <p>Generating synthetic data to enhance model training while preserving privacy. Enables healthcare innovation safely.</p>
-            <p class="value-add">Business Value: Creation of secure data for testing, enabling the development of new solutions without exposing sensitive patient information.</p>
-            <a href="https://github.com/danmca19/Synthetic_Data_Generation_for_Healthcare_Analytics" target="_blank">See more details</a>
-          </div>
-
-          <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/2659/2659360.png" alt="Hotel Cancelations">
-            <h3>Hotel Cancellations</h3>
-            <p>Predictive model to anticipate booking cancellations. Improves revenue management by reducing overbooking risks.</p>
-            <p class="value-add">Business Value: Forecasting cancellations helps optimize room occupancy and increase hotel revenue.</p>
-            <a href="https://github.com/danmca19/HotelCancelations" target="_blank">See more details</a>
-          </div>
-
-          <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/3176/3176364.png" alt="Telecom Churn">
-            <h3>Telecom Churn</h3>
-            <p>Classification model to predict churn in telecom customers. Supports retention strategies and improves customer lifetime value.</p>
-            <p class="value-add">Business Value: Identifies customers at risk of leaving, allowing the company to proactively retain them and protect long-term revenue.</p>
-            <a href="https://github.com/danmca19/Telecom_Churn" target="_blank">See more details</a>
-          </div>
-
-          <div class="card">
-            <img src="https://static.thenounproject.com/png/predictive-maintenance-icon-6950522-512.png" alt="Predictive Maintenance App">
-            <h3>Predictive <br> Maintenance App</h3>
-            <p>End-to-end deployment of a machine learning model using Streamlit, Docker, and Kubernetes for scalable predictive analytics.</p>
-            <p class="value-add">Business Value: Reduces downtime by enabling predictive maintenance and increases productivity through scalable AI solutions.</p>
-            <a href="https://github.com/danmca19/Artificial_Intelligence_with_Docker_and_Kubernetes-" target="_blank">See more details</a>
-          </div>
-        </div>
-      </section>
     </div>
-  </div>
 </body>
 </html>
