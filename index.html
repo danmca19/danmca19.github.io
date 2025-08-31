@@ -16,10 +16,9 @@
 
         .overlay {
             background-color: rgba(0, 0, 0, 0.65);
-            /* Removido min-height: 100vh; e display: flex; */
         }
 
-        /* Sidebar navigation */
+        /* Sidebar navigation - Alterado para ser visível por padrão */
         .sidebar {
             width: 250px;
             background: rgba(20, 20, 20, 0.9);
@@ -27,10 +26,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* ✨ Código Alterado ✨ */
             position: fixed;
             height: 100%;
             overflow-y: auto;
+            left: 0;
+            top: 0;
+            z-index: 100;
         }
 
         .sidebar img {
@@ -57,11 +58,25 @@
         .sidebar a:hover {
             color: #00bcd4;
         }
+        
+        /* Botão de menu (hambúrguer) para mobile - Escondido em telas grandes */
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 101;
+            cursor: pointer;
+            font-size: 30px;
+            color: #fff;
+            background: rgba(20, 20, 20, 0.7);
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
 
-        /* Main content */
+        /* Main content - A margem agora se ajusta automaticamente */
         .content {
-            /* ✨ Código Alterado ✨ */
-            margin-left: 290px; /* Adiciona margem para o conteúdo não ficar por baixo da sidebar */
+            margin-left: 290px;
             padding: 40px;
         }
 
@@ -157,9 +172,43 @@
             margin-top: 10px;
             line-height: 1.4;
         }
+
+        /*
+        * AQUI ESTÁ A CORREÇÃO
+        * A media query agora esconde a sidebar e mostra o menu-toggle
+        */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%); /* Esconde a sidebar em telas pequenas */
+                transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave */
+            }
+
+            .sidebar.active {
+                transform: translateX(0); /* Mostra a sidebar quando a classe .active é adicionada */
+            }
+
+            .content {
+                margin-left: 0; /* Remove a margem em telas menores */
+                padding: 20px; /* Ajusta o padding */
+            }
+
+            .projects {
+                grid-template-columns: 1fr; /* Cada cartão ocupa a largura total */
+            }
+
+            .tech-icons img {
+                width: 40px; /* Reduz o tamanho dos ícones */
+                margin: 8px;
+            }
+            
+            .menu-toggle {
+                display: block; /* Mostra o botão do menu */
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
     <div class="overlay">
         <nav class="sidebar">
             <img src="https://github.com/danmca19.png" alt="Profile Avatar">
@@ -263,5 +312,12 @@
             </section>
         </div>
     </div>
+    
+    <script>
+        function toggleMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
